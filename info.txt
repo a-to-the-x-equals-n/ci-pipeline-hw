@@ -1,0 +1,17 @@
+
+
+# ASSIGNMENT
+------------
+1. Refactor the code by applying appropriate software engineering principles.
+2. Create a Continuous Integration (CI) pipeline using Jenkins and GitHub.
+3. Containerize the refactored application using Docker.
+4. Deploy the container to Docker Hub using the same CI pipeline.
+
+
+# REFACTOR
+----------
+- Single Responsibility Principle 
+- Encapsulation and Abstraction
+- Extract Method and break them to smaller methods
+- Replace Magic Numbers with Constants
+- Print statements are used for all logging.
