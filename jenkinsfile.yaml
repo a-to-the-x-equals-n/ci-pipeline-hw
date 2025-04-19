@@ -1,0 +1,18 @@
+name: docker pipeline for airline system
+
+stages:
+  - name: build
+    steps:
+      - run: docker build -t ltmr/legacy-airline-system .
+
+  - name: login to docker hub
+    steps:
+      - run: echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+
+  - name: push image
+    steps:
+      - run: docker push ltmr/legacy-airline-system
+
+env:
+  DOCKER_USER: ltmr
+  DOCKER_PASS: ${{ secrets.DOCKER_PASS }}

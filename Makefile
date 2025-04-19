@@ -84,3 +84,23 @@ jenkins-status:
 	$(call banner-i,JENKINS STATUS)
 	@sudo service jenkins status
 	$(call banner-o,STATUS CHECK COMPLETE)
+
+
+.PHONY: docker docker-build docker-run docker-clean
+
+docker: docker-build docker-run
+
+docker-build:
+	$(call banner-i,BUILDING DOCKER IMAGE)
+	@docker build -t airline-app .
+	$(call banner-o,BUILD COMPLETE)
+
+docker-run:
+	$(call banner-i,RUNNING CONTAINER)
+	@docker run --rm airline-app
+	$(call banner-o,CONTAINER EXITED)
+
+docker-clean:
+	$(call banner-i,REMOVING DOCKER IMAGE)
+	@docker rmi -f airline-app || true
+	$(call banner-o,IMAGE REMOVED)
