@@ -2,6 +2,10 @@
 from datetime import datetime, timedelta
 from typing import Any
 
+def dummy_function_to_force_build():
+    pass
+
+
 def make_entity(**fields: dict) -> dict:
     return {**fields}
 
